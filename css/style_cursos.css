@@ -1,0 +1,467 @@
+:root {
+    --fuenteHeading: 'PT Sans', sans-serif;
+    --fuenteParrafos: 'Open Sans', sans-serif;
+    --fuenteTitulo: 'Abril Fatface', cursive;
+    --fuenteBanner:'Abril Fatface', cursive;
+    --fuenteSubTitulo: 'Exo 2', sans-serif;
+
+    --blanco: #ffffff;
+    --negro: #000000;
+    --rosado: #fc97c1;
+    --morado: #f6b1f4; 
+    --primario: #00fa9a;
+    /* --gris: #e1e1e1; */
+    --negroOpaco: rgba(0,0,0, .3);
+    --gris:#F4F6F7;
+}
+
+html {
+    box-sizing: border-box;
+    font-size: 62.5%; /* 1 rem = 10px */
+}
+
+*, *::before, *:after {
+    box-sizing: inherit; /* inherit: hereda del elemento padre que seria el HTML */
+}
+
+body {
+    font-family: var(--fuenteParrafos);
+    font-size: 1.6rem;
+    line-height: 2; /* Comúnmente se usa para establecer la distancia entre líneas de texto */
+}
+
+/* GLOBALES */
+
+.contenedor {
+    width: min(90%, 130rem);
+    margin: 0 auto; /* Centrar contenido */
+}
+
+a {
+    text-decoration: none;
+}
+
+h1, h2, h3, h4{
+    font-family: var (--fuenteHeading);
+    line-height: 1.2;
+}
+
+h1 {font-size: 4.8rem;} /* Tamaño de letra */
+
+h2 { font-size: 4.8rem;}
+
+h3 {font-size: 4.8rem;}
+
+h4 {font-size: 4.8rem;}
+
+img { 
+    max-width:  100%;
+}
+
+/*Animación de texto*/
+
+.rotate-in-center {
+	animation: rotate-in-center 1.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+}
+
+@keyframes rotate-in-center {
+    0% {
+      transform: rotate(-360deg);
+      opacity: 0;
+    }
+    100% {
+      transform: rotate(0);
+      opacity: 1;
+    }
+}
+
+/*Animacion de texto*/
+.tracking-in-expand {
+	animation: tracking-in-expand 2.5s cubic-bezier(0.215, 0.610, 0.355, 1.000) both;
+}
+
+@keyframes tracking-in-expand {
+    0% {
+      letter-spacing: -0.5em;
+      opacity: 0;
+    }
+    40% {
+      opacity: 0.6;
+    }
+    100% {
+      opacity: 1;
+    }
+}
+
+
+/*Text*/
+
+.no-margin {
+    margin: 0;
+}
+.no-padding {
+    padding: 0;
+}
+.centrar-texto {
+    text-align: center;
+}
+
+.titulo {
+    font-size: 5rem;
+    margin-top: 2rem;
+    font-family: var(--fuenteTitulo);
+    text-align: center;
+    letter-spacing: 8px;
+
+}
+
+.sub_titulo {
+    font-family: var(--fuenteSubTitulo);
+    font-size: 2.6rem;
+    text-align: center;
+}
+
+.subtitulo__banner {
+    font-size: 5rem;
+    font-family: var(--fuenteTitulo);
+}
+
+.text__banner {
+    font-size: 1.8rem;
+}
+
+/*REDES SOCIALES*/
+.contenido__segundario {
+    background-color: var(--rosado);
+    height: 40px;
+    display: flex;
+    align-items: center;
+}
+.instagram {margin-left: 20px;}
+.ws {margin-left: 5px; 
+    text-decoration: none;
+    color: var(--blanco);
+    font-family: var(--fuenteHeading);
+    font-size: 2rem;}
+.ws:hover {
+    color: var(--blanco);
+}
+.tiktok {margin-left: 10px;}
+
+/* HEADER */
+
+/*MENU*/
+
+.img__banner{
+    height: 800px;
+    background-size: cover; /*especifica el tamaño de las imágenes de fondo. */
+    background-repeat: no-repeat;
+    background-position: center center; /* left right*/
+    position: relative;
+}
+
+.menu {
+    background-color: var(--morado);
+    height: 80px;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid var(--blanco);
+    box-shadow: 5px 0 10px var(--negro);
+}
+
+.logo__nombre {
+    font-weight: 400;
+    font-size: 3rem;
+    font-family: var(--fuenteHeading);
+    color: var(--blanco);
+    margin-left: 5rem;
+}
+.logo__bold {
+    font-weight: 700;
+}
+
+.menu_items {
+    display: flex;
+    list-style: none;
+    margin-right: 3rem;
+}
+
+.menu_items li {
+    border-radius: 3px;
+    margin:0 5px;
+}
+
+.menu_items li a {
+    padding: 8px 10px;
+    font-size: 2rem;
+    display: block;
+    text-transform: uppercase;
+    color: var(--blanco);
+    position: relative;
+}
+
+.menu_items li:hover, li.active {
+    background-color: rgba(0,0,0, .3);
+    transform: .4s;
+} 
+
+.open-menu {
+    color: var(--blanco);
+    background: none;
+    cursor: pointer;
+    margin-right:3rem;
+    border: none;
+    flex-direction: column;
+    align-items: center;
+    overflow-y:auto;
+
+    display: none; 
+    transition: opacity 0.3s;
+}
+
+.close-menu {
+    color: var(--blanco);
+    background: none;
+    cursor: pointer;
+    margin-right:3rem;
+    border: none;
+    z-index: 3;
+    overflow-y:auto;
+
+    display: none;
+    transition: opacity 0.3s;
+}
+
+@media screen and (max-width: 1620px){
+    .img__banner{
+        height: 700px;
+    }
+}
+
+@media screen and (max-width: 1020px){
+    .menu_items li a {
+        font-size: 16px;
+    }
+    .img__banner{
+        height: 600px;
+    }
+    .text-content {
+        margin-left: 5rem;
+        margin-right: 5rem;
+    }
+}
+
+@media screen and (max-width: 858px){
+    .menu {
+        height: 65px;
+        position: relative;
+        
+    }
+    .menu_items {
+        position: fixed;
+        left: 5;
+        top: 1px;
+        width: 100%;
+        height: calc(100% - 65px);
+        overflow-y: auto;
+        background-color: #414141;
+        text-align: center;
+        transition: all .4s;
+        flex-direction: column; /*Hacemos el cambio de Row a Colum*/
+        align-items: center;
+        
+        left: 100%;
+        transition: left 0.3s;
+        z-index: 2;
+    }
+
+    .menu_items li {
+        margin: 30px 0 0 0; 
+        line-height: 30px;
+        margin-top: 5rem;
+    }
+
+    .menu_items li:hover, li:active{
+        background-color: var(--negroOpaco);
+        transform: .4s;
+    }
+
+    .menu_items li a {
+        font-size:  20px; 
+        font-weight: bold; 
+        color: var(--blanco);
+    }
+    .menu_items li a:hover {
+        color: var(--morado);
+    }
+    .img__banner{
+        height: 400px;
+    }
+    .text-content {
+        margin: 0 ;
+    }
+    .logo__nombre {
+        margin-left: 1rem;
+    }
+    .nav_menu_visible{
+        left: 0;
+    }
+    .nav_menu_close {
+        right: 0;
+    }
+    .close-menu,
+    .open-menu{
+        display: block;
+        /* z-index: 2; */
+    }
+    .close-menu {
+        margin-top: 2rem;
+        align-self: flex-end;
+    }
+
+    .contenido__segundario {
+        display: none;
+    }
+}
+
+/*Cursos*/
+
+.curso {
+    padding: 3rem 0;
+    border-bottom: 1px solid var(--gris);
+}
+@media (min-width: 768px) {
+    .curso {
+        display: grid;
+        grid-template-columns: 1fr 2fr;
+        column-gap: 2rem;
+    }
+}
+.curso:last-of-type {
+    border: none;
+}
+
+.widget-curso {
+    border-bottom: 1px solid var(--gris);
+    margin-bottom: 2rem;
+}
+
+.widget-curso:last-of-type {
+    border: none;
+    margin-bottom: 0;
+}
+
+.widget-curso__label {
+    font-family: var(--fuenteHeading);
+    font-weight: bold;
+}
+
+.widget-curso__info {
+    font-weight: normal;
+}
+
+.widget-curso__label,
+.widget-curso__info {
+    font-size: 2rem;
+    font-family: var(--fuenteParrafos);
+}
+
+.img_curso {
+    height: 100%;
+    width: 100%;
+    margin-top: 1rem;
+}
+@media screen and (max-width: 780px) {
+    .img_curso {
+        height: 90%;
+        width: 80%;
+        margin-top: 1rem;
+    }
+    
+}
+
+.p_curso {
+    margin-top: 1rem;
+}
+
+@media (max-width: 768px){
+    .p_curso {
+        margin-top: 3rem;
+    }
+}
+
+.sub_titulo_cursos {
+    font-family: var(--fuenteSubTitulo);
+    font-size: 5rem;
+}
+
+.titulo_curso {
+    font-family: var(--fuenteSubTitulo);
+}
+
+.boton {
+    display: block;
+    font-family: var(--fuenteHeading);
+    color: var(--blanco);
+    text-align: center;
+    padding: 1rem 3rem;
+    font-size: 1.8rem;
+    text-transform: uppercase;
+    font-weight: 700;
+    margin-bottom: 2rem;
+    border: none;
+    background-color: var(--rosado);
+}
+
+@media (min-width: 768px) {
+    .boton {
+        display: inline-block;
+    }
+}
+.boton:hover {
+    cursor: pointer;
+}
+
+.boton--primario {
+    background-color: var(--negro);
+}
+
+/* FOOTER */
+
+.footer {
+    background-color: var(--negro);
+    margin-top: 4rem;
+}
+
+.text_footer {
+    font-size: 4rem;
+    text-align: center;
+    color: var(--blanco);
+    margin-top: 1rem;
+    font-family: var(--fuenteSubTitulo);
+    letter-spacing: 5px;
+}
+
+.text_footer_sub_text {
+    font-size: 2rem;
+    text-align: center;
+    color: var(--blanco);
+}
+
+@media screen and (max-width: 980px){
+    .text_footer {
+        font-size: 2rem;
+    }
+    
+}
+
+@media screen and (max-width: 720px){
+    .text_footer {
+        font-size: 2rem;
+    }
+    .text_footer_sub_text {
+        font-size: 1.4rem;
+    }
+}
